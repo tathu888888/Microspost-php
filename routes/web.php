@@ -22,7 +22,10 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
 });
+
+Route::get('/', 'MicropostsController@index');
 
 Route::get('/', function () {
     return view('welcome');
