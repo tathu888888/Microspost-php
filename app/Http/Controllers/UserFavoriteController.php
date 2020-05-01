@@ -12,6 +12,8 @@ class UserFavoriteController extends Controller
         public function store(Request $request, $id)
     {
         \Auth::user()->add($id);
+        
+
         return back();
     }
 

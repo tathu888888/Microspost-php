@@ -54,6 +54,7 @@ class User extends Authenticatable
         
         $its_me = $this->id == $userId;
         
+
         
         if($exist || $its_me){
             
@@ -126,14 +127,14 @@ $this->favorite()->detach($micropostId);
         return false;
             
                     }
-                    
+                  
     }
     
     public function is_favoriteing($micropostid) 
     {
         
         return $this->favorite()->where('micropost_id', $micropostid)->exists();
-    
+
      }
 
 }
